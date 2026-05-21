@@ -22,7 +22,7 @@
           </div>
 
           <p class="desc-text text-lg">
-            {{ t.about.desc1_1 }}<span class="text-indigo-400">IDN Boarding School Solo</span>{{ t.about.desc1_2 }}<span class="text-white font-bold">'INDOPEDIA'</span>{{ t.about.desc1_3 }}
+            {{ t.about.desc1_1 }}<span class="text-indigo-400">IDN Boarding School Solo</span>{{ t.about.desc1_2 }}<span class="text-white font-bold">'ESL-Reading-Library'</span>{{ t.about.desc1_3 }}
           </p>
 
           <p class="desc-text">
