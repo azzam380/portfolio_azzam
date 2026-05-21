@@ -42,7 +42,7 @@
           <div class="bg-shape shape-sky floating" style="animation-delay: -1.5s;"></div>
 
           <div class="image-card glass-card group">
-            <img src="/images/WhatsApp Image 2026-01-10 at 19.33.54.jpeg" alt="Azzam" class="profile-img" />
+            <img src="/images/Foto gw.png" alt="Azzam" class="profile-img" />
             <div class="image-overlay">
               <p class="overlay-text">Muhammad Azzam</p>
             </div>
