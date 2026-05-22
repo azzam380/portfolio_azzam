@@ -81,6 +81,26 @@ const selectedExp = ref(null)
 
 const experiencesId = [
   {
+    period: 'Pengalaman Berharga',
+    role: 'Full-Stack Web Developer',
+    company: 'Pondok Pesantren Abu Hurairah Mataram',
+    icon: BriefcaseIcon,
+    locationIcon: MapPinIcon,
+    image: '/images/IDNLOMBOK.jpg',
+    paragraphs: [
+      'Berangkat ke Mataram, Lombok, tanpa modal dan kepastian kerja merupakan ujian ketahanan terbesar saya sebagai Software Engineering student. Setelah menghadapi pembatalan kerja sepihak di hari keberangkatan, saya memimpin tim untuk melakukan networking dan gerilya mencari peluang di lokasi baru.',
+      'Di hari ketiga, kami dipercaya oleh Pondok Pesantren Abu Hurairah Mataram untuk membangun Website ISO (Sistem Manajemen Data Terpusat). Dalam waktu kurang dari 4 hari, kami berhasil merancang logikanya, membangun sistem manajemen berbasis hak akses untuk Unit Rumah Tangga, dan menyelesaikan proyek tepat waktu.'
+    ],
+    list: [
+      'Memimpin tim dalam mencari peluang kerja secara mandiri di lokasi baru.',
+      'Merancang dan membangun Website ISO (Sistem Manajemen Data Terpusat).',
+      'Membangun sistem manajemen berbasis hak akses untuk Unit Rumah Tangga dalam waktu < 4 hari.',
+      'Mengelola krisis, komunikasi profesional, dan kerja sama tim di bawah tekanan target yang nyata.'
+    ],
+    tech: 'Pengalaman ini tidak hanya mengasah kemampuan teknis saya dalam coding, tetapi juga membuktikan kemampuan manajemen krisis, komunikasi profesional, dan kerja tim yang solid di bawah tekanan target yang nyata.',
+    expanded: false
+  },
+  {
     period: '2026 — Sekarang',
     role: 'Full-Stack Developer',
     company: 'Memento Game Studio (Remote)',
@@ -123,6 +143,26 @@ const experiencesId = [
 ]
 
 const experiencesEn = [
+  {
+    period: 'Valuable Experience',
+    role: 'Full-Stack Web Developer',
+    company: 'Pondok Pesantren Abu Hurairah Mataram',
+    icon: BriefcaseIcon,
+    locationIcon: MapPinIcon,
+    image: '/images/IDNLOMBOK.jpg',
+    paragraphs: [
+      'Departing to Mataram, Lombok, without capital or job certainty was my greatest endurance test as a Software Engineering student. After facing a unilateral job cancellation on the day of departure, I led the team to network and guerrilla-hunt for opportunities in a new location.',
+      'On the third day, we were trusted by Pondok Pesantren Abu Hurairah Mataram to build an ISO Website (Centralized Data Management System). In less than 4 days, we successfully designed the logic, built a role-based management system for the Household Unit, and completed the project on time.'
+    ],
+    list: [
+      'Led the team in independently seeking job opportunities in a new location.',
+      'Designed and built the ISO Website (Centralized Data Management System).',
+      'Built a role-based access management system for the Household Unit in < 4 days.',
+      'Managed crisis, professional communication, and teamwork under real target pressure.'
+    ],
+    tech: 'This experience not only honed my technical coding skills, but also proved my crisis management abilities, professional communication, and solid teamwork under real target pressure.',
+    expanded: false
+  },
   {
     period: '2026 — Present',
     role: 'Full-Stack Developer',
