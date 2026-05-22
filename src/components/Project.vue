@@ -1,16 +1,16 @@
 <template>
-  <section id="experience" class="page-container bg-slate-900-20">
+  <section id="project" class="page-container bg-slate-900-20">
     <div class="container exp-container">
       <div class="header-center" ref="headerRef" v-if="!selectedExp">
-        <h2 class="section-subtitle">{{ t.experience.subtitle }}</h2>
+        <h2 class="section-subtitle">{{ t.project.subtitle }}</h2>
         <h3 class="section-title">
-          {{ t.experience.title1 }}<span class="text-indigo-500">{{ t.experience.title2 }}</span>
+          {{ t.project.title1 }}<span class="text-indigo-500">{{ t.project.title2 }}</span>
         </h3>
       </div>
 
       <!-- Grid View -->
       <div class="cert-grid" ref="gridRef" v-if="!selectedExp">
-        <div v-for="(exp, index) in experiences" :key="index" class="cert-card glass-card group" @click="openDetail(exp)">
+        <div v-for="(exp, index) in projects" :key="index" class="cert-card glass-card group" @click="openDetail(exp)">
           <div class="cert-image-wrapper">
             <img :src="exp.image" :alt="exp.role" class="cert-image" />
             <div class="cert-overlay">
@@ -29,7 +29,7 @@
       <!-- Detail View -->
       <div v-else class="detail-view" ref="detailRef">
         <button class="back-btn glass" @click="closeDetail">
-          <ArrowLeftIcon class="icon-sm" /> {{ t.experience.back }}
+          <ArrowLeftIcon class="icon-sm" /> {{ t.project.back }}
         </button>
         
         <div class="detail-layout">
@@ -48,7 +48,7 @@
             <div class="detail-desc">
               <p v-for="(p, pIndex) in selectedExp.paragraphs" :key="pIndex" class="desc-text">{{ p }}</p>
               
-              <h4 class="task-title" v-if="selectedExp.list && selectedExp.list.length">{{ t.experience.responsibility }}</h4>
+              <h4 class="task-title" v-if="selectedExp.list && selectedExp.list.length">{{ t.project.responsibility }}</h4>
               <ul class="task-list">
                 <li v-for="(item, iIndex) in selectedExp.list" :key="iIndex">{{ item }}</li>
               </ul>
@@ -68,7 +68,7 @@
 
 <script setup>
 import { onMounted, ref, nextTick, computed } from 'vue'
-import { Briefcase as BriefcaseIcon, MapPin as MapPinIcon, Globe as GlobeIcon, Building2 as Building2Icon, Eye as EyeIcon, ArrowLeft as ArrowLeftIcon, Code as CodeIcon } from 'lucide-vue-next'
+import { Folder as FolderIcon, MapPin as MapPinIcon, Globe as GlobeIcon, Building2 as Building2Icon, Eye as EyeIcon, ArrowLeft as ArrowLeftIcon, Code as CodeIcon } from 'lucide-vue-next'
 import gsap from 'gsap'
 import { useLanguage } from '../composables/useLanguage'
 
@@ -79,94 +79,142 @@ const gridRef = ref(null)
 const detailRef = ref(null)
 const selectedExp = ref(null)
 
-const experiencesId = [
+const projectsId = [
   {
-    period: '2026 — Sekarang',
-    role: 'Full-Stack Developer',
-    company: 'Memento Game Studio (Remote)',
-    icon: BriefcaseIcon,
-    locationIcon: GlobeIcon,
-    image: '/images/MGS.png',
+    period: '2024 — 2027 (Pred.)',
+    role: 'Software Developer',
+    company: 'IDN Boarding School',
+    icon: FolderIcon,
+    locationIcon: MapPinIcon,
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     paragraphs: [
-      'Landing page interaktif untuk Memento Game Studio yang dibangun dengan Vue 3 dan Vite. Navigasi utama menggunakan Vue Router, dengan halaman Home, Info, Work, Play, dan Service.'
+      'Vehicle Booking & Monitoring System adalah aplikasi web untuk manajemen kendaraan operasional di perusahaan tambang. Admin dapat membuat permintaan pemesanan kendaraan yang kemudian diproses melalui alur persetujuan berjenjang oleh manager dan kepala cabang.',
+      'Sistem menyediakan dashboard analytics untuk melihat pemakaian kendaraan, mencatat log aktivitas, dan mengekspor laporan pemesanan dalam format Excel.'
     ],
     list: [
-      'Home: game-container dengan kartu navigasi interaktif, hover animation, dan transisi halaman.',
-      'Info: panel informasi interaktif untuk Mission, Location, dan Get in touch, lengkap dengan animasi transisi dan form kontak.',
-      'Work: galeri portofolio berisi tiga proyek utama yang menampilkan detail saat kartu diklik.',
-      'Service: kartu layanan fanned layout dengan modal overlay detail layanan.',
-      'Play Area: mini-game dan puzzle dengan timer, skor, grid, input pengguna, serta efek klik dan partikel.'
+      'Dashboard pemantauan pemakaian kendaraan.',
+      'Form pemesanan kendaraan dengan data driver dan approver.',
+      'Persetujuan multilevel (pending → level_1 → approved).',
+      'Ekspor laporan pemesanan ke Excel.',
+      'Role-based access untuk admin dan approver.',
+      'Logging aktivitas audit.'
     ],
-    tech: 'Teknologi utama: Vue 3, vue-router, Vite, GSAP, serta dukungan backend sederhana menggunakan Express, CORS, dan body-parser. Desain fokus pada interaksi visual, transisi halus, dan pengalaman pengguna imersif.',
+    tech: 'Teknologi yang digunakan: Laravel 12, PHP 8.3, MySQL, Tailwind CSS, Chart.js, dan Laravel Breeze untuk autentikasi.',
+    expanded: false
+  },
+  {
+    period: '2026 — 2026',
+    role: 'Full-Stack Developer',
+    company: 'TTS Master',
+    icon: FolderIcon,
+    locationIcon: GlobeIcon,
+    image: '/images/TTS.png',
+    paragraphs: [
+      'TTS Master adalah aplikasi web untuk membuat dan memainkan Teka-Teki Silang modern. Proyek ini dibangun dengan Next.js, React, dan terintegrasi dengan Supabase.'
+    ],
+    list: [
+      'Landing page interaktif dengan call-to-action jelas ke studio pembuatan.',
+      'Autentikasi email dan OAuth bagi pengguna untuk membuat atau memainkan puzzle.',
+      'Creator Studio untuk membuat puzzle baru, memasukkan kata dan petunjuk, lalu menghasilkan grid TTS secara otomatis.',
+      'Algoritma generator crossword cerdas menggunakan pendekatan backtracking dan penempatan kata berdasarkan persimpangan huruf.',
+      'Publikasi puzzle ke database agar dapat ditampilkan kembali di library untuk dimainkan.',
+      'Dashboard puzzle dengan daftar kreasi terbaru, pencarian judul, dan antarmuka responsif.'
+    ],
+    tech: 'Teknologi utama: Next.js 15+ (App Router), React, Tailwind CSS, dan Supabase untuk autentikasi serta database. Desain UI menekankan interaksi visual, animasi halus, dan pengalaman pengguna yang modern.',
     expanded: false
   },
   {
     period: '2025 — 2026',
-    role: 'Ujikom Web Developer',
-    company: 'PT. Krisan Kalindo Utama',
-    icon: BriefcaseIcon,
+    role: 'Junior Web Developer',
+    company: 'Kost Amanah',
+    icon: FolderIcon,
     locationIcon: Building2Icon,
-    image: '/images/KKU.png',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
     paragraphs: [
-      'Aplikasi e-commerce berbasis Laravel 12 dengan fitur pengguna dan admin. Backend menggunakan PHP 8.2, Laravel, Vite, dan Tailwind CSS.'
+      'Aplikasi platform booking kos online dibangun dengan Laravel. Pengguna dapat melihat daftar kos publik, mencari berdasarkan lokasi, serta membuka halaman detail setiap kos.',
+      'Setelah login, customer dapat melakukan booking, memeriksa status transaksi, melihat riwayat, dan mengelola profil. Admin memiliki dashboard terpisah untuk mengelola kos dan transaksi dengan alur role-based.'
     ],
     list: [
-      'Keranjang belanja untuk pengguna terautentikasi',
-      'Pembuatan pesanan dengan upload surat perusahaan',
-      'Notifikasi pesanan otomatis dikirim ke WhatsApp admin',
-      'Halaman riwayat dan detail pesanan pengguna',
-      'Panel admin untuk CRUD produk dan update status pesanan'
+      'CRUD kos lengkap: tambah, edit, hapus, dan kelola foto kos.',
+      'Manajemen booking masuk dengan konfirmasi, penolakan, dan laporan PDF.',
+      'Autentikasi Laravel standar dengan dukungan Socialite.',
+      'Validasi input form dan upload gambar kos.',
+      'Stok kamar otomatis berkurang saat transaksi dikonfirmasi.',
+      'Halaman publik katalog kos dan detail kos yang responsif.'
     ],
-    tech: 'Menunjukkan kemampuan membangun alur pemesanan online lengkap dengan relasi Eloquent, middleware auth/admin, file upload, dan integrasi API WhatsApp.',
     expanded: false
   }
 ]
 
-const experiencesEn = [
+const projectsEn = [
   {
-    period: '2026 — Present',
-    role: 'Full-Stack Developer',
-    company: 'Memento Game Studio (Remote)',
-    icon: BriefcaseIcon,
-    locationIcon: GlobeIcon,
-    image: '/images/MGS.png',
+    period: '2024 — 2027 (Est.)',
+    role: 'Software Developer',
+    company: 'IDN Boarding School',
+    icon: FolderIcon,
+    locationIcon: MapPinIcon,
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
     paragraphs: [
-      'Interactive landing page for Memento Game Studio built with Vue 3 and Vite. Main navigation uses Vue Router, featuring Home, Info, Work, Play, and Service pages.'
+      'Vehicle Booking & Monitoring System is a web application for operational vehicle management in a mining company. Admins can create vehicle booking requests which are then processed through a multi-level approval workflow by managers and branch heads.',
+      'The system provides an analytics dashboard to view vehicle usage, logs activities, and exports booking reports in Excel format.'
     ],
     list: [
-      'Home: game-container with interactive navigation cards, hover animations, and page transitions.',
-      'Info: interactive information panels for Mission, Location, and Get in touch, complete with transition animations and a contact form.',
-      'Work: portfolio gallery containing three main projects that show details when cards are clicked.',
-      'Service: service cards in a fanned layout with a service detail overlay modal.',
-      'Play Area: mini-games and puzzles with timer, score, grid, user input, as well as click and particle effects.'
+      'Dashboard for monitoring vehicle usage.',
+      'Vehicle booking form with driver and approver data.',
+      'Multilevel approval (pending → level_1 → approved).',
+      'Export booking reports to Excel.',
+      'Role-based access for admins and approvers.',
+      'Audit activity logging.'
     ],
-    tech: 'Core technologies: Vue 3, vue-router, Vite, GSAP, and simple backend support using Express, CORS, and body-parser. Design focuses on visual interaction, smooth transitions, and immersive user experiences.',
+    tech: 'Technologies used: Laravel 12, PHP 8.3, MySQL, Tailwind CSS, Chart.js, and Laravel Breeze for authentication.',
+    expanded: false
+  },
+  {
+    period: '2026 — 2026',
+    role: 'Full-Stack Developer',
+    company: 'TTS Master',
+    icon: FolderIcon,
+    locationIcon: GlobeIcon,
+    image: '/images/TTS.png',
+    paragraphs: [
+      'TTS Master is a web application for creating and playing modern Crossword Puzzles. This project is built with Next.js, React, and integrated with Supabase.'
+    ],
+    list: [
+      'Interactive landing page with clear call-to-action to the creation studio.',
+      'Email and OAuth authentication for users to create or play puzzles.',
+      'Creator Studio to create new puzzles, insert words and clues, then automatically generate the crossword grid.',
+      'Smart crossword generator algorithm using backtracking approach and word placement based on letter intersections.',
+      'Publish puzzles to the database so they can be displayed back in the library to be played.',
+      'Puzzle dashboard with the latest creations list, title search, and responsive interface.'
+    ],
+    tech: 'Core technologies: Next.js 15+ (App Router), React, Tailwind CSS, and Supabase for authentication and database. UI design emphasizes visual interaction, smooth animations, and a modern user experience.',
     expanded: false
   },
   {
     period: '2025 — 2026',
-    role: 'Ujikom Web Developer',
-    company: 'PT. Krisan Kalindo Utama',
-    icon: BriefcaseIcon,
+    role: 'Junior Web Developer',
+    company: 'Kost Amanah',
+    icon: FolderIcon,
     locationIcon: Building2Icon,
-    image: '/images/KKU.png',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800',
     paragraphs: [
-      'E-commerce application based on Laravel 12 with user and admin features. Backend uses PHP 8.2, Laravel, Vite, and Tailwind CSS.'
+      'An online boarding house (kost) booking platform application built with Laravel. Users can view the public kost list, search by location, and open the detail page for each kost.',
+      'After logging in, customers can make bookings, check transaction status, view history, and manage their profiles. Admins have a separate dashboard to manage kosts and transactions with a role-based workflow.'
     ],
     list: [
-      'Shopping cart for authenticated users',
-      'Order creation with company letter upload',
-      'Automated order notifications sent to admin WhatsApp',
-      'User order history and detail pages',
-      'Admin panel for product CRUD and order status updates'
+      'Complete kost CRUD: add, edit, delete, and manage kost photos.',
+      'Incoming booking management with confirmation, rejection, and PDF reports.',
+      'Standard Laravel authentication with Socialite support.',
+      'Form input validation and kost image uploads.',
+      'Room stock automatically decreases when a transaction is confirmed.',
+      'Public pages for kost catalog and responsive kost details.'
     ],
-    tech: 'Demonstrates the ability to build a complete online ordering workflow with Eloquent relationships, auth/admin middleware, file uploads, and WhatsApp API integration.',
     expanded: false
   }
 ]
 
-const experiences = computed(() => {
-  return currentLocale.value === 'id' ? experiencesId : experiencesEn
+const projects = computed(() => {
+  return currentLocale.value === 'id' ? projectsId : projectsEn
 })
 
 const initGridAnimation = () => {
@@ -206,7 +254,7 @@ const openDetail = async (exp) => {
   )
   
   // Scroll to top of section
-  const el = document.getElementById('experience')
+  const el = document.getElementById('project')
   if (el) el.scrollIntoView({ behavior: 'smooth' })
 }
 

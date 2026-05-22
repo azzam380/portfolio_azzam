@@ -34,6 +34,11 @@
           <span class="nav-text hidden-mobile" v-show="isSidebarExpanded">{{ t.sidebar.experience }}</span>
         </router-link>
 
+        <router-link to="/project" class="nav-item" active-class="active">
+          <FolderIcon class="icon" />
+          <span class="nav-text hidden-mobile" v-show="isSidebarExpanded">{{ t.sidebar.project }}</span>
+        </router-link>
+
         <router-link to="/certificates" class="nav-item" active-class="active">
           <AwardIcon class="icon" />
           <span class="nav-text hidden-mobile" v-show="isSidebarExpanded">{{ t.sidebar.certificates }}</span>
@@ -74,7 +79,8 @@ import {
   Linkedin as LinkedinIcon,
   Instagram as InstagramIcon,
   ChevronLeft as ChevronLeftIcon,
-  ChevronRight as ChevronRightIcon
+  ChevronRight as ChevronRightIcon,
+  Folder as FolderIcon
 } from 'lucide-vue-next'
 import { isSidebarExpanded, toggleSidebar } from '../composables/useSidebar'
 import { useLanguage } from '../composables/useLanguage'

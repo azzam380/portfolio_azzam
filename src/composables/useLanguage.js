@@ -9,6 +9,7 @@ const translations = {
       about: 'Tentang',
       skills: 'Keahlian',
       experience: 'Pengalaman',
+      project: 'Project',
       certificates: 'Sertifikat',
       contact: 'Kontak'
     },
@@ -42,10 +43,17 @@ const translations = {
     },
     experience: {
       subtitle: 'Perjalanan Karir',
-      title1: 'Pengalaman ',
-      title2: 'Kerja',
+      title1: 'Pengalaman',
+      title2: '',
       back: 'Kembali ke Pengalaman',
       responsibility: 'Tanggung Jawab & Pencapaian:'
+    },
+    project: {
+      subtitle: 'Portofolio',
+      title1: 'Karya & ',
+      title2: 'Project',
+      back: 'Kembali ke Project',
+      responsibility: 'Detail Project:'
     },
     certificates: {
       subtitle: 'Validasi Skill',
@@ -77,6 +85,7 @@ const translations = {
       about: 'About',
       skills: 'Skills',
       experience: 'Experience',
+      project: 'Projects',
       certificates: 'Certificates',
       contact: 'Contact'
     },
@@ -110,10 +119,17 @@ const translations = {
     },
     experience: {
       subtitle: 'Career Journey',
-      title1: 'Work ',
-      title2: 'Experience',
+      title1: 'Experience',
+      title2: '',
       back: 'Back to Experience',
       responsibility: 'Responsibilities & Achievements:'
+    },
+    project: {
+      subtitle: 'Portfolio',
+      title1: 'Featured ',
+      title2: 'Projects',
+      back: 'Back to Projects',
+      responsibility: 'Project Details:'
     },
     certificates: {
       subtitle: 'Skill Validation',
