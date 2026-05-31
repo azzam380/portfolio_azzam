@@ -154,11 +154,14 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   padding: 4rem 1.5rem 6rem 1.5rem; /* Extra bottom padding for mobile nav */
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .container {
   margin: auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 #contact {
@@ -212,9 +215,11 @@ onMounted(() => {
 }
 
 .section-title {
-  font-size: 3rem;
+  font-size: 2.25rem;
   font-weight: 900;
   line-height: 1.25;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 @media (min-width: 768px) {
@@ -241,6 +246,7 @@ onMounted(() => {
   border-radius: 1.5rem;
   overflow: hidden;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-card:hover {
@@ -302,6 +308,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1279px) {
