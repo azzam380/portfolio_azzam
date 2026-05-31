@@ -153,9 +153,15 @@ onMounted(() => {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 4rem 1.5rem 6rem 1.5rem; /* Extra bottom padding for mobile nav */
+  padding: 3rem 1rem 5rem 1rem; /* Smaller padding for mobile */
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding: 4rem 1.5rem 6rem 1.5rem;
+  }
 }
 
 .container {
@@ -215,7 +221,7 @@ onMounted(() => {
 }
 
 .section-title {
-  font-size: 2.25rem;
+  font-size: 2rem; /* Reduced for mobile */
   font-weight: 900;
   line-height: 1.25;
   word-wrap: break-word;
@@ -241,12 +247,20 @@ onMounted(() => {
 .contact-card {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 1.5rem;
+  gap: 1rem; /* Reduced gap for mobile */
+  padding: 1rem; /* Reduced padding for mobile */
+  border-radius: 1.25rem;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .contact-card {
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
 }
 
 .contact-card:hover {
@@ -302,13 +316,21 @@ onMounted(() => {
 
 .contact-form {
   background-color: rgba(30, 41, 59, 0.3);
-  padding: 2rem;
-  border-radius: 2.5rem;
+  padding: 1.5rem; /* Reduced padding for mobile */
+  border-radius: 1.5rem; /* Reduced border radius for mobile */
   border: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    padding: 2rem;
+    border-radius: 2.5rem;
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 1279px) {
